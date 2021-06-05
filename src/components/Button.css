@@ -1,0 +1,32 @@
+.button-wrapper {
+    width: 180px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+}
+
+.button-text {
+    font-family: 'LMRoman-Regular';
+    color: #554439;
+    height: 100%;
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    word-wrap: normal;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.button-icon {
+    width: 33%;
+    height: auto;
+    padding: 5px 0;
+}
+
+.button-wrapper:hover {
+    background-color: gray;
+    cursor: pointer;
+}
