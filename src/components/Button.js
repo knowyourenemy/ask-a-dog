@@ -8,7 +8,7 @@ function Button(props) {
             </img>
             <div className='button-text'>
                 {props.text}
-            </div>     
+            </div>
         </a>
     )
 }

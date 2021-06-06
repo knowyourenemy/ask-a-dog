@@ -8,10 +8,7 @@ import ball_icon from '../assets/images/Picture 1.png';
 import github_icon from '../assets/images/github-icon.png';
 import Button from './Button';
 
-
-
 function Home() {
-
     const [question, setQuestion] = useState("")
     const [formSubmitted, setFormSubmitted] = useState(false)
 
@@ -20,7 +17,7 @@ function Home() {
         e.preventDefault()
         document.getElementById('input-id').value = ""
     }
-
+    
     const onFormChange = (e) => {
         setQuestion(e.target.value)
         setFormSubmitted(false)

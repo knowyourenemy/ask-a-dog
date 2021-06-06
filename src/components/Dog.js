@@ -13,8 +13,6 @@ function Dog(props) {
     const [quote, setQuote] = useState({})
     const [isLoadingError, setIsLoadingError] = useState(false)
 
-
-
     useEffect(() => {
         console.log("getting dog url!")
         setIsDogUrlLoading(true)
@@ -30,7 +28,6 @@ function Dog(props) {
                 console.log(err)
             });
     }, [refreshCount]);
-
 
     var onRefreshClick = () => {
         console.log("getting another response")
@@ -70,24 +67,15 @@ function Dog(props) {
                         </div>
 
                         <div className='dog-button-container' style={{ display: isDogImgLoading ? "none" : "flex" }}>
-                            <Button onClick={onRefreshClick} text='fetch another!' icon={dog_bone_icon}/>
+                            <Button onClick={onRefreshClick} text='fetch another!' icon={dog_bone_icon} />
                         </div>
                     </div>
                     <div className='dog-loading-2' style={{ display: isDogImgLoading && !isLoadingError ? "flex" : "none" }}>Sacrificing Treat...</div>
-
-
                 </div>
             )}
-
             <div className='loading-error' style={{ display: isLoadingError ? "flex" : "none" }}>
                 Sorry! All dogs are asleep right now. Please try again later.
             </div>
-
-
-
-
-
-
         </div>
     )
 }

@@ -20,7 +20,7 @@
     margin: 0;
     font-family: 'LMRoman-Regular';
     border-radius: 15px;
-  }
+}
 
 .question-input::placeholder{
     font-family: 'LMRoman-Regular';
