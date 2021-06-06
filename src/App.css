@@ -1,8 +1,13 @@
 .App{
   width: fit-content;
   height: fit-content;
-  background-color: #554439;
+  min-height: 100vh;
+  min-width: 100vw;
   color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #554439;
 }
 
 @font-face {

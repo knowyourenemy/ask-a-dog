@@ -2,61 +2,39 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Dog.css'
 import Button from './Button'
+import { quotes } from './Quotes.js'
+import dog_bone_icon from '../assets/images/dog-bone-6453.svg';
 
-function Dog() {
+function Dog(props) {
     const [dog, setDog] = useState("")
-    const [quotes, setQuotes] = useState([{
-        text: '',
-        author: ''
-    }])
-    const [isDogLoading, setIsDogLoading] = useState(false)
-    const [isQuoteLoading, setIsQuoteLoading] = useState(false)
+    const [isDogUrlLoading, setIsDogUrlLoading] = useState(false)
     const [refreshCount, setRefreshCount] = useState(0)
     const [isDogImgLoading, setIsDogImgLoading] = useState(false)
     const [quote, setQuote] = useState({})
+    const [isLoadingError, setIsLoadingError] = useState(false)
 
 
 
     useEffect(() => {
         console.log("getting dog url!")
-        setIsDogLoading(true)
+        setIsDogUrlLoading(true)
         setIsDogImgLoading(true)
         axios.get('https://dog.ceo/api/breeds/image/random')
             .then(res => {
-                setIsDogLoading(false)
+                setIsDogUrlLoading(false)
                 setDog(res.data.message)
+                setQuote(getQuote)
             })
             .catch(err => {
+                setIsLoadingError(true)
                 console.log(err)
             });
     }, [refreshCount]);
 
 
-    useEffect(() => {
-        console.log("getting quotes")
-        setIsQuoteLoading(true)
-        axios.get('https://type.fit/api/quotes')
-            .then(res => {
-                setQuotes(res.data)
-                var index = Math.floor(Math.random() * res.data.length)
-                setQuote(res.data[index])
-                setIsQuoteLoading(false)
-
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
-
-    // useEffect(() => {
-    //     console.log("setting quote")
-    //     setQuote(getQuote)
-    //     setIsQuoteLoading(false)
-    // }, [quotes])
-
     var onRefreshClick = () => {
         console.log("getting another response")
-        setIsDogLoading(true)
+        setIsDogUrlLoading(true)
         setIsDogImgLoading(true)
         setRefreshCount(refreshCount + 1)
         setQuote(getQuote)
@@ -70,8 +48,11 @@ function Dog() {
 
     return (
         <div className='dog-wrapper'>
-            {isDogLoading || isQuoteLoading ? (
-                <div className='dog-loading-1'>Consulting Dogfather...</div>
+            <div className='dog-question'>
+                {props.question}
+            </div>
+            {isDogUrlLoading ? (
+                <div className='dog-loading-1' style={{ display: isLoadingError ? "none" : "flex" }}>Consulting Dogfather...</div>
             ) : (
                 <div className='dog-loaded'>
                     <div className='dog-content' style={{ display: isDogImgLoading ? "none" : "flex" }}>
@@ -80,23 +61,27 @@ function Dog() {
                         </img>
                         <div className='dog-texts'>
                             <div className='dog-quote'>
-                                {quote.text}
+                                {"\"" + quote.text + "\""}
                             </div>
                             <div className='dog-quote-author'>
                                 {quote.author}
                             </div>
-                            
+
                         </div>
 
-                        <div className='dog-button-wrapper' style={{ display: isDogImgLoading ? "none" : "flex" }}>
-                                <Button onClick={onRefreshClick} />
+                        <div className='dog-button-container' style={{ display: isDogImgLoading ? "none" : "flex" }}>
+                            <Button onClick={onRefreshClick} text='fetch another!' icon={dog_bone_icon}/>
                         </div>
                     </div>
-                    <div className='dog-loading-2' style={{ display: isDogImgLoading ? "flex" : "none" }}>Sacrificing Treat...</div>
-                   
+                    <div className='dog-loading-2' style={{ display: isDogImgLoading && !isLoadingError ? "flex" : "none" }}>Sacrificing Treat...</div>
+
 
                 </div>
             )}
+
+            <div className='loading-error' style={{ display: isLoadingError ? "flex" : "none" }}>
+                Sorry! All dogs are asleep right now. Please try again later.
+            </div>
 
 
 

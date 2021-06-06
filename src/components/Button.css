@@ -1,32 +1,81 @@
 .button-wrapper {
-    width: 180px;
-    height: 60px;
+    width: fit-content;
+    height: 50px;
     background-color: white;
     display: flex;
     flex-direction: row;
     border-radius: 15px;
+    margin: 0 15px;
+    align-items: center;
 }
 
 .button-text {
     font-family: 'LMRoman-Regular';
     color: #554439;
     height: 100%;
-    width: 66%;
+    width: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
-    word-wrap: normal;
     justify-content: center;
     font-size: 18px;
+    line-height: 80%;
+    margin: 0 5px;
+    white-space: nowrap;
 }
 
 .button-icon {
-    width: 33%;
-    height: auto;
-    padding: 5px 0;
+    width: auto;
+    height: 70%;
+    padding: 5px 0 5px 5px;
+    color: #554439;
 }
 
 .button-wrapper:hover {
-    background-color: gray;
+ 
     cursor: pointer;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+@media screen and (max-width: 850px) {
+    .button-wrapper{
+    
+        height: 40px;
+    }
+    
+    .button-text {
+        font-size: 15px;        
+    }
+
+    .button-icon {
+        
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .button-wrapper{
+        height: 35px;
+    }
+    
+    .button-text {
+        font-size: 15px;        
+    }
+
+    .button-icon {
+        
+    }
 }

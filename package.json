@@ -6,10 +6,18 @@
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/html2canvas": "0.0.36",
     "axios": "^0.21.1",
+    "dom-to-image": "^2.6.0",
+    "downloadjs": "^1.4.7",
+    "html-to-image": "^1.6.2",
+    "html2canvas": "^1.0.0-rc.7",
     "react": "^17.0.2",
+    "react-base64-downloader": "^2.1.7",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-svg-to-image": "^3.0.0",
+    "use-react-screenshot": "^1.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -35,5 +43,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://www.ask-a-dog.com/"
 }

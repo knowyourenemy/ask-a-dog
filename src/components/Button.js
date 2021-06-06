@@ -1,16 +1,17 @@
 import React from 'react'
 import './Button.css'
-import dog_bone_icon from '../assets/images/dog-bone-6453.svg';
+
+
 
 function Button(props) {
     return (
-        <div onClick={props.onClick} className='button-wrapper'>
-            <img className='button-icon' src={dog_bone_icon}>
+        <a href={props.url} onClick={props.onClick} className='button-wrapper' target='_blank'>
+            <img className='button-icon' src={props.icon}>
             </img>
             <div className='button-text'>
-                Fetch another enlightenment
+                {props.text}
             </div>     
-        </div>
+        </a>
     )
 }
 

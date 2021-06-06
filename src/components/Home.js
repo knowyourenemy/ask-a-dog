@@ -2,7 +2,11 @@ import React from 'react'
 import Dog from './Dog'
 import { useState, useEffect } from "react";
 import './Home.css'
-import dog_icon from '../assets/images/dog-6468 (1).svg';
+import dog_icon from '../assets/images/New Project.svg';
+import paw_icon from '../assets/images/pawprint-6504 copy.svg';
+import ball_icon from '../assets/images/Picture 1.png';
+import github_icon from '../assets/images/github-icon.png';
+import Button from './Button';
 
 
 
@@ -11,10 +15,10 @@ function Home() {
     const [question, setQuestion] = useState("")
     const [formSubmitted, setFormSubmitted] = useState(false)
 
-    const onFormSubmit = (e) =>{
+    const onFormSubmit = (e) => {
         setFormSubmitted(true)
         e.preventDefault()
-        console.log("this vfwhu")
+        document.getElementById('input-id').value = ""
     }
 
     const onFormChange = (e) => {
@@ -22,20 +26,36 @@ function Home() {
         setFormSubmitted(false)
     }
 
+    const onLogoClick = () => {
+        setFormSubmitted(false)
+        document.getElementById('input-id').value = ""
+    }
+
+    const apiLink = <a href='https://dog.ceo/dog-api/' target='_blank'>the Dog API</a>
+
     return (
-        <div className='home-wrapper'>
-            <div className="header" style={{ display: formSubmitted ? "none" : "flex" }}>Ask a Dog</div>
-            <form onSubmit={onFormSubmit} className='question-form'>
-                <input className='question-input' type='text' onChange={onFormChange} placeholder='Input question here' />
+        <div className='home-wrapper' id='home'>
+            <div className='header-wrapper'>
+                <img src={paw_icon} className='header-icon'></img>
+                <div className="header" onClick={onLogoClick}>Wisdom Dog</div>
+                <img src={paw_icon} className='header-icon'></img>
+            </div>
+            <form onSubmit={onFormSubmit} className='question-form' id='form'>
+                <input className='question-input' id='input-id' type='text' onChange={onFormChange} placeholder='Input question here' />
             </form>
-            {formSubmitted? (
-                <Dog question = {question} />
+            {formSubmitted ? (
+                <Dog question={question} />
             ) : (
                 <div className='home-about'>
-                    <div className="home-description">Have a burning question? Ask a dog!</div>
+                    <div className="home-description">In this dog-eat-dog world, it is normal to feel like the dog days won’t end. 
+But fret not, because sage doggos are here to provide you with advice and comfort. Simply ask any question above, and be enlightened!</div>
                     <img className='home-dog-icon' src={dog_icon}></img>
                     <div className='home-encouragement'>Good luck!</div>
-                    <div className='home-disclaimer'> This was created using the Dogs CEO API and the Quotes XYZ Api. View Source Code: </div>
+                    <div className='home-disclaimer'> This website was created using {apiLink}. </div>
+                    <div className='home-buttons-container'>
+                        <Button text='Project Code' icon={github_icon} url='https://github.com/knowyourenemy/inspirational-dogs'/>
+                        <Button text='My Website' icon={ball_icon} url='https://www.aadipatwari.com'/>
+                    </div>
                 </div>
             )}
         </div>
