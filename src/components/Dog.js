@@ -56,7 +56,7 @@ function Dog(props) {
             ) : (
                 <div className='dog-loaded'>
                     <div className='dog-content' style={{ display: isDogImgLoading ? "none" : "flex" }}>
-                        <img src={dog} className='dog-img' onLoad={() => setIsDogImgLoading(false)}>
+                        <img src={dog} className='dog-img' alt='dog' onLoad={() => setIsDogImgLoading(false)}>
 
                         </img>
                         <div className='dog-texts'>

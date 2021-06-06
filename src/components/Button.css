@@ -18,9 +18,9 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 80%;
-    margin: 0 5px;
+    margin: 0 10px;
     white-space: nowrap;
 }
 
@@ -58,24 +58,17 @@
     }
     
     .button-text {
-        font-size: 15px;        
-    }
-
-    .button-icon {
-        
+        font-size: 17px;        
     }
 }
 
 @media screen and (max-width: 550px) {
     .button-wrapper{
-        height: 35px;
+        height: 32px;
+        margin: 0 5px;
     }
     
     .button-text {
         font-size: 15px;        
-    }
-
-    .button-icon {
-        
     }
 }
