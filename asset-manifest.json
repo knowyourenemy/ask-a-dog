@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ask-a-dog/static/css/main.d3bb7a21.chunk.css",
+    "main.js": "/ask-a-dog/static/js/main.4091b6cf.chunk.js",
+    "main.js.map": "/ask-a-dog/static/js/main.4091b6cf.chunk.js.map",
+    "runtime-main.js": "/ask-a-dog/static/js/runtime-main.75c1e040.js",
+    "runtime-main.js.map": "/ask-a-dog/static/js/runtime-main.75c1e040.js.map",
+    "static/js/2.0a913965.chunk.js": "/ask-a-dog/static/js/2.0a913965.chunk.js",
+    "static/js/2.0a913965.chunk.js.map": "/ask-a-dog/static/js/2.0a913965.chunk.js.map",
+    "index.html": "/ask-a-dog/index.html",
+    "static/css/main.d3bb7a21.chunk.css.map": "/ask-a-dog/static/css/main.d3bb7a21.chunk.css.map",
+    "static/js/2.0a913965.chunk.js.LICENSE.txt": "/ask-a-dog/static/js/2.0a913965.chunk.js.LICENSE.txt",
+    "static/media/ball-icon.727426e8.png": "/ask-a-dog/static/media/ball-icon.727426e8.png",
+    "static/media/dog-bone-icon.3010a4e4.svg": "/ask-a-dog/static/media/dog-bone-icon.3010a4e4.svg",
+    "static/media/dog-icon.5ac57828.svg": "/ask-a-dog/static/media/dog-icon.5ac57828.svg",
+    "static/media/App.css": "/ask-a-dog/static/media/lmroman10-regular.3a0c0153.otf",
+    "static/media/paw-icon.7f03045b.svg": "/ask-a-dog/static/media/paw-icon.7f03045b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75c1e040.js",
+    "static/js/2.0a913965.chunk.js",
+    "static/css/main.d3bb7a21.chunk.css",
+    "static/js/main.4091b6cf.chunk.js"
+  ]
+}
