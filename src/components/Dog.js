@@ -3,7 +3,7 @@ import axios from 'axios'
 import './Dog.css'
 import Button from './Button'
 import { quotes } from './Quotes.js'
-import dog_bone_icon from '../assets/images/dog-bone-6453.svg';
+import dog_bone_icon from '../assets/images/dog-bone-icon.svg';
 
 function Dog(props) {
     const [dog, setDog] = useState("")

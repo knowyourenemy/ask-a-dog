@@ -2,9 +2,9 @@ import React from 'react'
 import Dog from './Dog'
 import { useState } from "react";
 import './Home.css'
-import dog_icon from '../assets/images/New Project.svg';
-import paw_icon from '../assets/images/pawprint-6504 copy.svg';
-import ball_icon from '../assets/images/Picture 1.png';
+import dog_icon from '../assets/images/dog-icon.svg';
+import paw_icon from '../assets/images/paw-icon.svg';
+import ball_icon from '../assets/images/ball-icon.png';
 import github_icon from '../assets/images/github-icon.png';
 import Button from './Button';
 
@@ -17,7 +17,7 @@ function Home() {
         e.preventDefault()
         document.getElementById('input-id').value = ""
     }
-    
+
     const onFormChange = (e) => {
         setQuestion(e.target.value)
         setFormSubmitted(false)

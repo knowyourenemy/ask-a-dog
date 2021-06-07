@@ -1,4 +1,3 @@
-
 ## Ask a Dog!
 
 This project answers any question you give it with an image of a dog and a quote.
@@ -7,7 +6,7 @@ This project answers any question you give it with an image of a dog and a quote
 
 This project uses the Axios library to fetch a random image from <a href='https://dog.ceo/dog-api/'> this Dog API</a>.
 
-The quotes are stored locally, and have been obtained from <a href='https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/9'>this quotes API</a>.
+The quotes are stored locally, and have been obtained from <a href='https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373/9'>this Quotes API</a>.
 
 # Future Plans
 
